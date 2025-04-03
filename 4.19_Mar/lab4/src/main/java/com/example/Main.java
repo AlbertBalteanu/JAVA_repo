@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
 
+
         Location[] locations = {
             new Location("1", LocationType.FRIENDLY),
             new Location("2", LocationType.FRIENDLY),
@@ -15,6 +16,7 @@ public class Main {
             new Location("6", LocationType.NEUTRAL)
         };
         
+
 
         Set<Location> friendlyLocations = Arrays.stream(locations)
                 .filter(loc -> loc.getType() == LocationType.FRIENDLY)
