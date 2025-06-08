@@ -1,0 +1,23 @@
+src/main/java/lab9/
+├── common/                    # No dependencies on JPA or JDBC
+│   ├── dto/
+│   │   ├── CityDto.java
+│   │   ├── CountryDto.java
+│   │   └── ContinentDto.java
+│   ├── repository/
+│   │   ├── CityRepositoryInterface.java
+│   │   ├── CountryRepositoryInterface.java
+│   │   └── ContinentRepositoryInterface.java
+│   └── factory/
+│       ├── AbstractRepositoryFactory.java
+│       └── RepositoryFactoryProvider.java
+├── JDBC/                      # Only JDBC dependencies
+│   ├── entity/               # Your original City, Country classes
+│   ├── DAO/                  # Your original DAOs
+│   ├── repository/           # Implements common interfaces
+│   └── factory/
+├── JPA/                       # Only JPA dependencies  
+│   ├── entity/               # Your @Entity classes
+│   ├── repository/           # Your existing JPA repos + wrappers
+│   └── factory/
+└── App.java                   # Uses only common interfaces

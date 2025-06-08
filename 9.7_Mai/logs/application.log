@@ -1,0 +1,50 @@
+00:17:21 [INFO] Logging configured from properties file
+00:17:21 [INFO] Application starting with AbstractFactory pattern
+00:17:22 [INFO] Using factory: JPARepositoryFactory
+00:17:25 [INFO] EntityManagerFactory created successfully
+00:17:25 [INFO] Created entity Continent in 67ms
+00:17:25 [INFO] Found 1 entities of type Continent by name 'Europe' in 346ms
+00:17:25 [INFO] Created entity Country in 16ms
+00:17:25 [INFO] Found 1 entities of type Country by name 'France' in 18ms
+00:17:25 [INFO] Created entity City in 6ms
+00:17:25 [INFO] Found entity Continent by id in 3ms
+00:17:25 [INFO] Found entity Country by id in 3ms
+00:17:25 [INFO] Found entity City by id in 3ms
+00:17:25 [INFO] Found 0 entities of type City by name 'P' in 4ms
+00:17:25 [INFO] Application completed
+17:12:43 [INFO] Logging configured from properties file
+17:12:43 [INFO] Application starting with AbstractFactory pattern
+17:12:43 [INFO] Using factory: JPARepositoryFactory
+17:12:49 [INFO] EntityManagerFactory created successfully
+17:12:49 [INFO] Created entity Continent in 72ms
+17:12:49 [INFO] Found 2 entities of type Continent by name 'Europe' in 218ms
+17:12:49 [INFO] Created entity Country in 79ms
+17:12:50 [INFO] Found 2 entities of type Country by name 'France' in 46ms
+17:12:50 [INFO] Created entity City in 20ms
+17:12:50 [INFO] Found entity Continent by id in 5ms
+17:12:50 [INFO] Found entity Country by id in 9ms
+17:12:50 [INFO] Found entity City by id in 4ms
+17:12:50 [INFO] Found 0 entities of type City by name 'P' in 8ms
+17:12:50 [INFO] Application completed
+17:13:01 [INFO] Logging configured from properties file
+17:13:01 [INFO] Application starting with AbstractFactory pattern
+17:13:01 [INFO] Using factory: JDBCRepositoryFactory
+17:13:03 [SEVERE] Application error: JDBC create failed
+java.lang.RuntimeException: JDBC create failed
+	at lab9.JDBC.repository.JDBCCountryRepository.create(JDBCCountryRepository.java:30)
+	at lab9.App.demonstrateFactoryPattern(App.java:61)
+	at lab9.App.main(App.java:38)
+Caused by: org.postgresql.util.PSQLException: ERROR: column "continent" of relation "countries" does not exist
+  Position: 40
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at lab9.JDBC.DAOs.CountryDAO.createCountry(CountryDAO.java:28)
+	at lab9.JDBC.repository.JDBCCountryRepository.create(JDBCCountryRepository.java:26)
+	... 2 more
+
+17:13:03 [INFO] Application completed
